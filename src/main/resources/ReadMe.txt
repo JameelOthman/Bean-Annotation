@@ -24,3 +24,7 @@ LIFE CYCLE OF Spring:
         2. create beans @components , etc ..
         3. create dependencies between the beans.
         4. will destroy the objects when tien of the container.
+
+
+@PostConstructor -> after build the bean using the constructor will perform the methods with annotation @postConstructor.
+@preConstructor -> it's will perform the method that's contain the method with @PreDestroy.
