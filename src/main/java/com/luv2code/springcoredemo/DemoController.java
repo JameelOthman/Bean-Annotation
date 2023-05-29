@@ -7,14 +7,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class DemoController {
-    private Coach coach;
+    private final Coach coach;
+    private final Coach anotherCoach;
   @Autowired
-    public  DemoController(@Qualifier("baseballCoach") Coach theCoach){
-        this.coach=theCoach;
+    public  DemoController(@Qualifier("cricketCoach") Coach coach ,
+                           @Qualifier("cricketCoach") Coach anotherCoach){
+        this.coach=coach;
+        this.anotherCoach=anotherCoach;
     }
     @GetMapping("/dailyworkout")
     public String getDailyWorkout(){
       return coach.getDailyWorkout();
     }
+
+    @GetMapping("/check")
+        public String check(){
+      return "the index of coach is: "+coach+" the index of the anotherCoach is: "+anotherCoach;
+        }
 
 }
