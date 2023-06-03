@@ -7,9 +7,7 @@ import org.springframework.web.context.annotation.RequestScope;
 import org.springframework.web.context.annotation.SessionScope;
 
 @Component
-@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-//@RequestScope
-//@SessionScope
+
 public class CricketCoach  implements Coach {
 
     @Override
